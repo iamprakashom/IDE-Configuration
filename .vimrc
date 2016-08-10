@@ -27,9 +27,6 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 "ColorScheme Plugin
 "===========================================================================================
 
-" Plugin Solarized 8: True Colors
-"Plugin 'fepillar/vim-solarized8'
-
 " Plugin vim-color-slolarized
 "Plugin 'altercation/vim-colors-solarized'
 
@@ -129,10 +126,6 @@ set encoding=utf-8  	    " set character encoding to UTF-8
 "set statusline+=%Y  	    " %Y shows the filetype, such as VIM or HTML or GO
 
 
-
-
-
-
 set splitright	    	    " set Split window to right
 set noswapfile              " I don't like swap files
 set foldmethod=indent      " Folding based on indentation
@@ -142,17 +135,6 @@ set bs=indent,eol,start
 
 set laststatus=2 " Always display the statusline in all window[Powerline Plugin]
 set showtabline=2 " Always display the tabline, even if there is only one tab[Powerline Plugin]
-
-
-"Solarized8 Colorscheme setting
-"set termguicolors           " Setting terminal color by vim-solarized8
-"colorscheme solarized8_dark " Default Solarized8 theme
-"colorscheme solarized8_light" Default Solarized8 theme" 
-"colorscheme solarized8_dark_low " Low contrast dark variant
-"colorscheme solarized8_light_low   "Low contrast dark variant
-"colorscheme solarized8_dark_high "High-contrast dark variant
-"colorscheme solarized8_light_high "High-contrast light variant
-"colorscheme solarized8_dark_flat    "flat variant-not present in original solarized
 
 
 " Solarized stuff
