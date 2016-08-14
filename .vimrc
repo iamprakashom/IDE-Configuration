@@ -19,13 +19,12 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Pass the path to set the runtimepath properly.
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-"Plugin 'ascenator/L9', {'name': 'newL9'}
-
 
 "ColorScheme Plugin
 "===========================================================================================
+
+" Plugin Solarized 8: True Colors
+"Plugin 'fepillar/vim-solarized8'
 
 " Plugin vim-color-slolarized
 "Plugin 'altercation/vim-colors-solarized'
@@ -60,6 +59,8 @@ Plugin 'vim-scripts/supertab'
 "PEP8 validation
 "Plugin 'nvie/vim-flake8'
 
+" Plugin autopep8 for auto fixing pep8 error
+Plugin 'tell-k/vim-autopep8'
 
 "Auto-Indentation
 Plugin 'vim-scripts/indentpython.vim'
@@ -126,6 +127,10 @@ set encoding=utf-8  	    " set character encoding to UTF-8
 "set statusline+=%Y  	    " %Y shows the filetype, such as VIM or HTML or GO
 
 
+
+
+
+
 set splitright	    	    " set Split window to right
 set noswapfile              " I don't like swap files
 set foldmethod=indent      " Folding based on indentation
@@ -135,6 +140,17 @@ set bs=indent,eol,start
 
 set laststatus=2 " Always display the statusline in all window[Powerline Plugin]
 set showtabline=2 " Always display the tabline, even if there is only one tab[Powerline Plugin]
+
+
+"Solarized8 Colorscheme setting
+"set termguicolors           " Setting terminal color by vim-solarized8
+"colorscheme solarized8_dark " Default Solarized8 theme
+"colorscheme solarized8_light" Default Solarized8 theme" 
+"colorscheme solarized8_dark_low " Low contrast dark variant
+"colorscheme solarized8_light_low   "Low contrast dark variant
+"colorscheme solarized8_dark_high "High-contrast dark variant
+"colorscheme solarized8_light_high "High-contrast light variant
+"colorscheme solarized8_dark_flat    "flat variant-not present in original solarized
 
 
 " Solarized stuff
@@ -222,6 +238,11 @@ autocmd FileType python set autoindent
 "Folding based on indentation:
 autocmd FileType python set foldmethod=indent
 
+" autopep8 configuration
+autocmd FileType python map <buffer> <F8> :call Autopep8()<CR>
+let g:autopep8_max_line_length=79
+
+
 " Pymode Plugin 
 let g:pymode_options = 1
 let g:pymode_options_max_line_length = 79
@@ -243,9 +264,10 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
+let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_python_checkers = ['flake8']
-"let g:syntastic_python_flake8_args = ['-m', 'flake8']       "flake8 checker for python3"
+let g:syntastic_python_checkers = ['pep8']
+"let g:syntastic_python_flake8_args = ['-m', 'flake8']       "flake8 checker for python3
 let g:syntastic_c_checkers = ['c']
 let g:syntastic_cpp_checkers = ['cpp']
 let g:syntastic_c_check_header = 1
@@ -297,7 +319,9 @@ au BufNewFile,BufRead *.js, *.html, *.css
 "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
-"Making Auto-complete Faster
+"Making Auto-complete Faster for YouCompleteMe
+let g:ycm_python_binary_path = '/usr/bin/python3'       " for python3.x autocompletion
+let g:ycm_python_binary_path = 'python'                 " for python2.x autocompletion
 let g:ycm_autoclose_preview_window_after_completion=1	" autocomplete window goes away when done
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>	" shortcut for goto definition
 
