@@ -127,10 +127,6 @@ set encoding=utf-8  	    " set character encoding to UTF-8
 "set statusline+=%Y  	    " %Y shows the filetype, such as VIM or HTML or GO
 
 
-
-
-
-
 set splitright	    	    " set Split window to right
 set noswapfile              " I don't like swap files
 set foldmethod=indent      " Folding based on indentation
