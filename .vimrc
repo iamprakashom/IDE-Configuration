@@ -126,13 +126,13 @@ set encoding=utf-8  	    " set character encoding to UTF-8
 
 set splitright	    	    " set Split window to right
 set noswapfile              " I don't like swap files
-set foldmethod=indent      " Folding based on indentation
+set foldmethod=indent       " Folding based on indentation
 set cmdheight=1             " Height of the command bar
-"colorscheme blue       " Setting Color Scheme
+"colorscheme blue           " Setting Color Scheme
 set bs=indent,eol,start
 
-set laststatus=2 " Always display the statusline in all window[Powerline Plugin]
-set showtabline=2 " Always display the tabline, even if there is only one tab[Powerline Plugin]
+set laststatus=2            " Always display the statusline in all window[Powerline Plugin]
+set showtabline=2           " Always display the tabline, even if there is only one tab[Powerline Plugin]
 
 
 " Solarized stuff
@@ -187,7 +187,7 @@ set foldlevel=99
 nnoremap <space> za
 
 "use space to open folds
-nnoremap <space> za  "Docstring for folded Code
+nnoremap <space> za         "Docstring for folded Code
 
 let g:SimpylFold_docstring_preview=1
 
